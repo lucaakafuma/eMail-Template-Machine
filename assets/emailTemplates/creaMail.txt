@@ -1,0 +1,6 @@
+potete creare in autonomia le caselle di posta dal vostro pannello cPanel all'indirizzo:
+http://cpanel.{{dominio}} [https://{{cPanel}}:2083 via SSL]
+nome utente: {{utente}}
+andando alla pagina E-MAIL -> Account E-Mail.
+
+Restiamo a disposizione per eventuali chiarimenti.

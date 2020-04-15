@@ -1,0 +1,159 @@
+Come da richiesta si è attivato un piano di hosting "Pro - Bronze"
+per permettervi la gestione dei servizi relativi al dominio:
+{{dominio}}
+
+=-=
+
+Si riportano i principali servizi con le relative credenziali d'accesso
+e le informazioni basilari per il loro utilizzo.
+
+N.B.: È suggerito riferirsi ai servizi con le URL (indirizzi internet)
+riportate tra "[" e "]": sono più difficili da ricordare ma sono
+sempre funzionanti indipendentemente dalla configurazione della zona.
+Sono valide per tutti gli hosting ospitati nel server specifico.
+La nomenclatura semplificata, relativa al proprio dominio,:
+<servizio>.{{dominio}}
+{{dominio}}/<servizio>
+funziona quando la zona relativa al proprio dominio è correttamente
+configurata.
+
+=> Pannello di controllo (Accesso principale al cruscotto cPanel)
+URL http://{{dominio}}/cpanel [https://{{cPanel}}.inasset.net:2083/]
+oppure (sito web locale): http://www.{{dominio}}/cpanel
+oppure (accesso in chiaro): http://cpanel.{{dominio}}
+         [{{cPanel}}.inasset.net/cpanel]
+Username: {{user}}
+Password: {{password}}
+
+N.B.: Se {{dominio}} o www.{{dominio}} o cpanel.{{dominio}}
+si riferiscono a un server diverso da {{cPanel}}.inasset.net [82.193.33.204]
+o non sono definiti la relativa URL non è utilizzabile.
+
+N.B.: L'accesso al servizio è di tipo cifrato (SSL) e il certificato
+inviato dal server è relativo al nome host *.inasset.net. A seconda
+dell'URL utilizzata bisognerà accettare esplicitamente il certificato
+inviato dal sito. È necessario fidarsi che il certificato inviato dal
+server *.{{dominio}} [{{cPanel}}.inasset.net] non sia fraudolento.
+Per evitare la segnalazione accedere utilizzando le URL con
+{{cPanel}}.inasset.net.
+
+Queste credenziali (utente principale) valgono anche per: ftp, mail,
+MySQL, phpMyAdmin. Si consiglia di non utilizzate questo utente per
+connessioni non cifrate, ad es. FTP e POP3, in quanto "chiunque"
+potrebbe carpirvi la password che viene inviata in chiaro dal vostro
+computer.
+
+In caso di smarrimento della password d'accesso al proprio cruscotto
+cPanel esiste una procedura per poterla reimpostare utilizzando
+l'indirizzo email specificato in Preferences / Update Contact Info.
+Cercando d'accedere al pannello di controllo inserire il proprio nome
+utente "{{user}}" come Username quindi cliccare in basso a destra su
+"Reset password" e seguire le indicazioni. Sul sito apparirà la
+richiesta d'inserimento del codice che avrete ricevuto tramite e-mail.
+Entrati vi verrà fornita/inserita una nuova password che andrà
+conservata con cura.
+
+=> Spazio web (se opportunamente configurato)
+URL http://www.{{dominio}}
+          http://{{dominio}}
+Server FTP: www.{{dominio}} [{{cPanel}}.inasset.net]
+              ftp.{{dominio}}
+FTP Port: 21
+Nome utente: {{user}}
+
+=> Accesso "FTP" da pannello di controllo
+Volendo si può accedere allo spazio web anche dal pannello di controllo:
+URL http://{{dominio}}/cpanel [https://{{cPanel}}.inasset.net:2083/]
+Username: {{user}}
+Files -> "File Manager" oppure "Legacy File Manager" quindi accedere
+alla cartella:
+o Web Root (public_html/www)
+Per vedere il file .htaccess ricordarsi di mettere il segno di spunta
+(v) su:
+v Show Hidden Files (dotfiles).
+
+=> Utenti FTP
+Normalmente al webmaster, creatore/gestore del sito web, si danno gli
+strumenti necessari al caricamento e alla gestione del sito e non
+l'accesso amministrativo al proprio cruscotto cPanel. Anche se il sito
+è gestito in proprio comunque si raccomanda di non utilizzare l'account
+principale come se fosse un normale utente di posta o FTP.
+Per la creazione di un utente FTP atto all'inserimento del sito si vada
+nella sezione "Files" e si clicchi su "FTP Accounts".
+Si raccomanda di inserire come directory la cartella "public_html"
+che contiene le pagine del sito quindi si inserisca:
+Directory: [/home/{{user}}/]public_html]
+
+=> Database MySQL
+Per l'attivazione del database MySQL bisogna entrare nel pannello di
+controllo sezione "Databases" e cliccare su "MySQL Database Wizard" dove
+potrete creare un nuovo database e un nuovo utente MySQL per il vs/
+sito web dinamico. I dati da comunicare allo sviluppatore (webmaster)
+del sito sono:
+Server MySQL: localhost
+Database: {{user}}_<qualcosa>
+Username: <qualcosa> [Creato sarà: {{user}}_<qualcosa>]
+
+N.B.: Oltre alla creazione del database anche l'amministrazione
+dello stesso tramite PHPMyAdmin è riservata all'utente del cruscotto
+({{user}}). Se il dump del database da caricare supera i 50Mb dovrete
+contattarci affinché provvediamo noi al caricamento del database.
+Il caricamento iniziale, creazione delle tabelle, dev'esser fatto a
+carico dell'utente principale poi l'ordinaria gestione è a carico del
+webmaster.
+
+Se le operazioni di: creazione utente FTP, creazione utente MySQL,
+creazione database MySQL e inizializzazione dello stesso si vogliono
+far gestire direttamente al webmaster si raccomanda di modificare la
+password dell'utente principale prima di comunicarla a terzi e di
+cambiarla immediatamente appena le operazioni di inizializzazione del
+sito sono terminate.
+
+=> Statistiche sulle visite
+Accedere dal pannello di controllo e andare nella sezione Logs:
+-> Webalizer
+-> Awstats
+[https://{{cPanel}}.inasset.net:2083/awstats.pl?config={{dominio}}&lang=it]
+[https://{{cPanel}}.inasset.net:2083/tmp/{{user}}/webalizer/index.html]
+
+=> Servizio di posta (se opportunamente configurato)
+Per la creazione delle caselle di posta:
+Mail -> Email accounts
+Per la creazione degli inoltri:
+Mail -> Forwarders
+
+Si è impostato il rifiuto degli indirizzi e-mail inesistenti [cfr.:
+Default Address], in alternativa i messaggi inviati ad indirizzi
+inesistenti si possono inoltrare all'account principale,
+accesso in POP3 o IMAP4 con username: {{user}}.
+Istruzioni sulla configurazione del programma di posta si trovano nel
+pannello di controllo dopo aver creato la casella di posta (POP
+account):
+Mail -> Email Accounts
+Nella riga relativa al POP account, sulla destra sotto la colonna
+"Actions", l'ultima voce è "More v" -> "Configure Email Client"
+
+Riassumo i dati essenziali per l'utilizzo della posta
+Indirizzo e-mail: <indirizzo>@{{dominio}}
+Server POP3/IMAP4: mail.{{dominio}} [{{cPanel}}.inasset.net]
+Protocolli supportati: POP3/POP3S/IMAP4/IMAP4S
+Username: <indirizzo>+{{dominio}} [<indirizzo>@{{dominio}}]
+[Il seguente servizio è utile agli utenti mobili che utilizzano diverse
+connessioni ad internet per spedire la posta. Normalmente è preferibile
+utilizzare il servizio del proprio provider di connessione ad internet]
+Server SMTP: mail.{{dominio}} [{{cPanel}}.inasset.net]
+Protocolli supportati: SMTP/SSMTP
+Richiede l'autenticazione: stessi username/password del POP3/IMAP4
+
+=> Webmail (se opportunamente configurato)
+Invio/ricezione/consultazione/amministrazione della casella di posta
+tramite accesso web.
+URL http://{{dominio}}/webmail [https://{{cPanel}}.inasset.net:2096/]
+oppure (accesso cifrato): https://webmail.{{dominio}}:2096
+oppure (accesso in chiaro): http://webmail.{{dominio}}
+E-mail: <indirizzo>@{{dominio}}
+
+Accedendo al proprio indirizzo email tramite il servizio webmail si
+possono trovare le istruzioni sulla configurazione del programma di
+posta cliccando sull'icona Configure Mail Client oltre alla gestione
+degli autorisponditori e dei filtri.

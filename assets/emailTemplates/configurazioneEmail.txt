@@ -1,0 +1,55 @@
+
+
+Oggetto:
+Parametri di configurazione delle caselle email del vostro account cPanel.
+
+Gentile Cliente,
+di seguito i parametri di configurazione, comuni a qualsiasi dispositivo, delle caselle di posta del vostro account cPanel associato al dominio {{dominio}}:
+
+Configurazione email senza protocollo SSL/TLS:
+
+protocollo posta in entrata IMAP:
+
+    server: mail.{{dominio}}
+    porta: 143
+    sicurezza della connessione: Nessuna
+    metodo di autenticazione: password normale
+
+protocollo posta in entrata POP3:
+
+    server: mail.{{dominio}}
+    porta: 110
+    sicurezza della connessione: Nessuna
+    metodo di autenticazione: password normale
+
+protocollo posta in uscita SMTP:
+
+    server: mail.{{dominio}}
+    porta: 25 oppure 587
+    sicurezza della connessione: Nessuna
+    metodo di autenticazione: password normale
+
+Configurazione email con protocollo SSL/TLS:
+
+protocollo posta in entrata IMAP:
+
+    server: {{cPanel}}
+    porta: 993
+    sicurezza della connessione: SSL/TLS
+    metodo di autenticazione: password normale
+
+protocollo posta in entrata POP3:
+
+    server: {{cPanel}}
+    porta: 995
+    sicurezza della connessione: SSL/TLS
+    metodo di autenticazione: password normale
+
+protocollo posta in uscita SMTP:
+
+    server: {{cPanel}}
+    porta: 465
+    sicurezza della connessione: SSL/TLS
+    metodo di autenticazione: password normale
+
+Restiamo a disposizione per eventuali chiarimenti.

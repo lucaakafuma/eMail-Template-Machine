@@ -1,0 +1,24 @@
+SPAM da vostra casella email: {{email}}
+
+Gentile Cliente,
+abbiamo rilevato l'utilizzo dell'account in oggetto da parte di indirizzi IP stranieri per l'invio di SPAM.
+Abbiamo provveduto all'impostazione di una nuova password per mitigarne l'abuso.
+Potete procedere in autonomia ad assegnarne una sufficientemente complessa di vostro gradimento accedendo al pannello di controllo cPanel all'indirizzo:
+
+http://cpanel.{{domain}}
+oppure:
+https://{{cpName}}:2083 [con SSL]
+
+e andando alla pagina EMAIL -> Email Accounts.
+
+Se non avete credenziali valide potete procedere al recupero della password cliccando sul link "Reset password" nella pagina di login del cPanel.
+Il nome utente assegnato al vostro account è: 
+
+{{utente}}
+
+La mail di contatto a cui verranno inviate le informazioni è: 
+
+{{email}}
+
+
+Restiamo a disposizione per eventuali chiarimenti.

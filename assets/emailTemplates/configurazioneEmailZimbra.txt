@@ -1,0 +1,14 @@
+********** Oggetto **********
+Parametri di configurazione delle caselle email del vostro account Zimbra.
+
+********** Corpo del ticket **********
+Gentile Cliente,
+di seguito i parametri di configurazione, comuni a qualsiasi dispositivo, delle caselle di posta del vostro account Zimbra associato al dominio {{dominio}}:
+
+server IMAP, POP3, SMTP: {{mxSrvAddress}}
+nome utente: indirizzo email completo
+password: password della casella email.
+
+E' preferibile usare la connessione sicura SSL/TLS.
+
+Restiamo a disposizione per eventuali chiarimenti.

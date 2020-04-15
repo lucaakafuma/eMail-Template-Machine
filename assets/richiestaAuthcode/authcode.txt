@@ -1,0 +1,22 @@
+Invio del codice AuthInfo/EPP per il dominio: {{dominio}}
+
+
+Gentile Cliente,
+ 
+come richiesto dalle regole sulla registrazione sincrona dei nomi a
+dominio .IT comunichiamo il codice AuthInfo / EPP associato al nome a
+dominio registrato a vostro nome.
+
+Codice AuthInfo per il dominio {{dominio}}:
+{{authcode}}
+
+Il codice vi viene comunicato in quanto contatto Registrante del nome a
+dominio. A ciascun dominio corrisponde un codice auth-info specifico,
+che viene inviato all'indirizzo di posta dell'intestatario del dominio
+(Registrante) al momento della prima registrazione, del trasferimento o
+quando ne faccia richiesta.
+
+Il codice AuthInfo/EPP permette il trasferimento del nome a dominio presso altro
+registar.
+
+Si consiglia di conservare con cura questo codice.
